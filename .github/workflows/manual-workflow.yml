@@ -5,8 +5,7 @@ on:
     inputs:
       environment:
         description: 'Target deployment environment'
-        type: environment
-        required: true
+        type: choice
         default: 'dev'
       version:
         description: 'Release version or tag'
