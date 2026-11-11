@@ -1,0 +1,25 @@
+name: Manual Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target deployment environment'
+        type: environment
+        default: 'dev'
+      version:
+        description: 'Release version or tag'
+        type: string
+        required: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print workflow inputs
+        run: |
+          echo "Deploying version: ${{ inputs.version }}"
+          echo "Environment: ${{ inputs.environment }}"
