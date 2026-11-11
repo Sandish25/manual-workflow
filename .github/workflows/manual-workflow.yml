@@ -5,11 +5,7 @@ on:
     inputs:
       environment:
         description: 'Target deployment environment'
-        type: choice
-        options:
-          - dev
-          - staging
-          - production
+        type: environment
         default: 'dev'
       version:
         description: 'Release version or tag'
