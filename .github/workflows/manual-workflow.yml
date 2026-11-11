@@ -6,6 +6,7 @@ on:
       environment:
         description: 'Target deployment environment'
         type: environment
+        required: true
         default: 'dev'
       version:
         description: 'Release version or tag'
