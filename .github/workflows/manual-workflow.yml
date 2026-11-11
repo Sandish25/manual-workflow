@@ -6,6 +6,10 @@ on:
       environment:
         description: 'Target deployment environment'
         type: choice
+        options:
+          - dev
+          - staging
+          - production
         default: 'dev'
       version:
         description: 'Release version or tag'
